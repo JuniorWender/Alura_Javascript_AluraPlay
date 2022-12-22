@@ -1,15 +1,30 @@
+async function listAllVideos(){
+    const conection = await fetch('http://localhost:3000/videos');
+    const convertedConection = await conection.json();
 
-// async function listAllVideos(){
-//     const url = await fetch('http://localhost:3000/videos');
-//     const convertUrl = await url.json();
+    return convertedConection;
+}
 
-//     return convertUrl;
-// }
+async function createVideo( titulo , descricao , url , imagem ){
+    const conection = await fetch('http://localhost:3000/videos',{
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            titulo : titulo,
+            descricao : `${descricao} mil visualizações`,
+            url : url,
+            imagem : imagem
+        })
+    });
 
-// // export const conectApi = {
-// //     listAllVideos
-// // }
+    const convertedConection = conection.json();
 
-// const numero = 10;
+    return convertedConection;
+}
 
-// export { numero };
+export const conectApi = {
+    listAllVideos,
+    createVideo
+}

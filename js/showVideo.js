@@ -1,13 +1,6 @@
-// import { conectApi } from "./conectApi.js";
+import { conectApi } from "./conectApi.js";
 
 const ul_element = document.querySelector('[data-list]');
-
-async function listAllVideos(){
-    const url = await fetch('http://localhost:3000/videos');
-    const convertUrl = await url.json();
-
-    listVideo(convertUrl);
-}
 
 function buildCard(titulo, descricao, url, imagem) {
     const video = document.createElement('li');
@@ -26,8 +19,8 @@ function buildCard(titulo, descricao, url, imagem) {
     return video;
 }
 
-function listVideo(videos){
-    const apiList =  videos.listAllVideos();
+async function listVideo(){
+    const apiList = await conectApi.listAllVideos();
     apiList.forEach(element => ul_element.appendChild(
         buildCard(element.titulo, element.descricao, element.url, element.imagem)
         ));
