@@ -1,5 +1,5 @@
 async function listAllVideos(){
-    const conection = await fetch('http://localhost:3000/video');
+    const conection = await fetch('http://localhost:3000/videos');
     const convertedConection = await conection.json();
 
     return convertedConection;

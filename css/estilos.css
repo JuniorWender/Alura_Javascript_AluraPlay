@@ -73,7 +73,7 @@ body {
     font-size: 21px;
 }
 
-.mensagem_titulo {
+.Mensagem_Erro {
     color: var(--azul-medio);
     font-weight: bold;
     font-size: 50px;
@@ -83,7 +83,7 @@ body {
     width: 100%;
 }
 
-.fa-triangle-exclamation{
+.emote{
   color: var(--azul-medio);  
   font-size: 200px;
   justify-content: center;

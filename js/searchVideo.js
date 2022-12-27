@@ -18,6 +18,10 @@ async function searchVideo(event) {
         buildCard( element.titulo, element.descricao, element.url, element.imagem )
         )
     );
+    if(search.length == 0){
+        list_Element.innerHTML = `<h2 class="Mensagem_Erro"> Nenhum Vídeo Encontrado </h2>
+        <i class="fa-solid fa-circle-exclamation emote"></i>`
+    }
 
 }
 

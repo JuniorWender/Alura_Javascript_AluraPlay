@@ -27,8 +27,8 @@ async function listVideo(){
             ));
     }
     catch{
-        ul_element.innerHTML = `<h2 class="mensagem_titulo"> Erro Ao Tentar Carregar os Vídeos </h2>
-        <i class="fa-solid fa-triangle-exclamation"></i>`
+        ul_element.innerHTML = `<h2 class="Mensagem_Erro"> Erro Ao Tentar Carregar os Vídeos </h2>
+        <i class="fa-sharp fa-solid fa-face-frown-slight emote"></i>`
     }
 }
 
