@@ -20,10 +20,16 @@ export default function buildCard(titulo, descricao, url, imagem) {
 }
 
 async function listVideo(){
-    const apiList = await conectApi.listAllVideos();
-    apiList.forEach(element => ul_element.appendChild(
-        buildCard(element.titulo, element.descricao, element.url, element.imagem)
-        ));
+    try {
+        const apiList = await conectApi.listAllVideos();
+        apiList.forEach(element => ul_element.appendChild(
+            buildCard(element.titulo, element.descricao, element.url, element.imagem)
+            ));
+    }
+    catch{
+        ul_element.innerHTML = `<h2 class="mensagem_titulo"> Erro Ao Tentar Carregar os Vídeos </h2>
+        <i class="fa-solid fa-triangle-exclamation"></i>`
+    }
 }
 
 listVideo();

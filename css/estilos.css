@@ -73,6 +73,25 @@ body {
     font-size: 21px;
 }
 
+.mensagem_titulo {
+    color: var(--azul-medio);
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 100px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.fa-triangle-exclamation{
+  color: var(--azul-medio);  
+  font-size: 200px;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  padding-top: 100px;
+}
+
 .pesquisar__input {
     width: 260px;
     height: 32px;

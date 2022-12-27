@@ -1,5 +1,5 @@
 async function listAllVideos(){
-    const conection = await fetch('http://localhost:3000/videos');
+    const conection = await fetch('http://localhost:3000/video');
     const convertedConection = await conection.json();
 
     return convertedConection;
@@ -18,7 +18,9 @@ async function createVideo( titulo , descricao , url , imagem ){
             imagem : imagem
         })
     });
-
+    if(!conection.ok){
+        throw new Error("Não Foi Possível Enviar o Vídeo!");
+    }
     const convertedConection = conection.json();
 
     return convertedConection;
